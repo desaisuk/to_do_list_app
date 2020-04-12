@@ -1,0 +1,32 @@
+{% load static %}
+
+<html>
+
+<head></head>
+
+<title>To Do app</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="{% static 'tasks/main.css' %}">
+
+<body>
+
+    <div class="center-column">
+
+        <p>
+            Are you sure you want to delete task '{{ item.title }}' ?
+        </p>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input class="btn btn-sm btn-info" type="submit" name="Confirm">
+        </form>
+
+        <a class="btn btn-sm btn-info" href="{% url 'list' %}"> Cancel </a>
+
+    </div>
+
+</body>
+
+</html>
